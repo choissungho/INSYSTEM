@@ -77,9 +77,9 @@
 			<div ng-app ng-init="checked = false">
 				<form id="mainlogin" action="./logingo.do" method="post" id="formlogin" class="form-signin">
 					<label for="username">Username</label> <input class="form-styling"
-						type="text" id="userid" name="userid" placeholder="" /> <label
+						type="text" id="user_id" name="user_id" placeholder="" /> <label
 						for="password">Password</label> <input class="form-styling"
-						type="text" id="userpass" name="userpass" placeholder="" /> <input
+						type="text" id="user_pass" name="user_pass" placeholder="" /> <input
 						type="checkbox" id="checkbox" /> <label for="checkbox"><span
 						class="ui"></span>Keep me signed in</label>
 					<div class="btn-animate">
