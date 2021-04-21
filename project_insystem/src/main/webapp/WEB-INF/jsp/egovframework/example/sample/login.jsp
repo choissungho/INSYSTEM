@@ -95,7 +95,7 @@
 						for="confirmpassword">Confirm password</label> <input
 						class="form-styling" type="text" name="confirmpassword"
 						placeholder="" /> <a ng-click="checked = !checked"
-						class="btn-signup">Sign Uptest</a>
+						class="btn-signup">Sign Uptesttest</a>
 				</form>
 				<div class="success">
 					<svg width="270" height="270" xmlns="http://www.w3.org/2000/svg"
