@@ -37,7 +37,7 @@ public class MainController {
 	/** EgovSampleService */
 	@Resource(name = "mainService")
 	private MainService mainService;
-
+	
 	@RequestMapping(value="/login.do")
 	public String loginPage(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
 		return "sample/login";
@@ -48,6 +48,16 @@ public class MainController {
 		return "./login";*/
 	}
 	
+	@RequestMapping(value="/testtest.do")
+	public String testPage(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
+		System.out.println("테스트.두");
+		return "common/sidebar";
+	}
+	@RequestMapping(value="/test.do")
+	public String testPage2(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
+		System.out.println("테스트.두");
+		return "common/sidebar";
+	}
 	
 	@RequestMapping(value="/logingo.do")
 	public String logingoPage(ModelMap model, @RequestParam Map<String, Object> params,HttpSession session) {
@@ -73,5 +83,7 @@ public class MainController {
 		int result = mainService.idcheck(params);
 		return result;
 	}
-
+	
+	
+	
 }
