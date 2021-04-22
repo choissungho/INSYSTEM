@@ -35,7 +35,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class MainController {
 
 	/** EgovSampleService */
-	@Resource(name = "mainService")
+	@Resource(name = "mainservice")
 	private MainService mainService;
 	
 	@RequestMapping(value="/login.do")
@@ -66,15 +66,36 @@ public class MainController {
 		if(userinfo == null) {
 			model.addAttribute("userinfo",null);
 			session.setAttribute("loginId","false");
-			return "sample/test1.do";
+			return "sample/login";
 		}
 
 		else {
 			model.addAttribute("userinfo",userinfo);
 			session.setAttribute("loginId",userinfo);
-			return "forward:./test1.do";
+			return "sample/test1";
 		}
 	}
+	
+
+	
+	@RequestMapping(value="signup.do")
+	public String signupPage(ModelMap model, @RequestParam Map<String, Object> params){
+		
+		int result = mainService.idcheck(params);
+		
+		try{
+			if(result ==1){
+				return "login";
+			}else if(result == 0){
+				mainService.mainsignup(params);
+			}
+		}catch(Exception e){
+			throw new RuntimeException();
+		}
+		return "login";
+		
+	}
+	
 	
 	@ResponseBody
 	@RequestMapping(value="/idcheck")

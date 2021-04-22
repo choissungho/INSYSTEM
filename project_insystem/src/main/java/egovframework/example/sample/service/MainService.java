@@ -22,6 +22,8 @@ public interface MainService {
 
 	Map<String, Object> mainlogin(Map<String, Object> params);
 
+	void mainsignup(Map<String, Object> params);
+	
 	int idcheck(Map<String, Object> params);
 
 }

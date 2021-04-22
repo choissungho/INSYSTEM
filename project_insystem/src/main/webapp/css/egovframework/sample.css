@@ -510,3 +510,10 @@ a.btn-goback:hover {
     fill: #1059FF;
     transform: rotate(180deg)
 }
+
+
+
+.login_btn{
+	background-color:transparent;
+	border:0px transparent solid;
+}

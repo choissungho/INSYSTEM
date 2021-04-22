@@ -9,6 +9,11 @@
 			where userid = #{user_id}
 			and userpass = #{user_pass}
 		</select>
+		 
+		<insert id="mainsignup" parameterType="java.util.Map">
+			insert into userdata (usernum,userid,userpass,username)
+			values (nextval('seq_user'), #{user_id}, #{user_pass}, #{user_name})
+		</insert>
 
 
 		<select id="idcheck" resultType="Integer">

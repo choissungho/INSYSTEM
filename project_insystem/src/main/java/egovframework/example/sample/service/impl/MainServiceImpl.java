@@ -22,7 +22,7 @@ import egovframework.example.sample.service.MainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("mainService")
+@Service("mainservice")
 public class MainServiceImpl implements MainService {
 	
 	@Autowired
@@ -42,6 +42,12 @@ public class MainServiceImpl implements MainService {
 		
 		return mainMapper.mainlogin(params);
 		
+	}
+
+	@Override
+	public void mainsignup(Map<String, Object> params) {
+		
+		mainMapper.mainsignup(params);
 	}
 	
 }
