@@ -48,15 +48,15 @@ public class MainController {
 		return "./login";*/
 	}
 	
-	@RequestMapping(value="/testtest.do")
-	public String testPage(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
-		System.out.println("테스트.두");
-		return "common/sidebar";
+	@RequestMapping(value="/m_list.do")
+	public String memberList(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
+		System.out.println("멤버리스트 페이지");
+		return "member/m_list";
 	}
-	@RequestMapping(value="/test.do")
-	public String testPage2(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
-		System.out.println("테스트.두");
-		return "common/sidebar";
+	@RequestMapping(value="/m_reg.do")
+	public String memberReg(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
+		System.out.println("멤버등록 페이지");
+		return "member/m_reg";
 	}
 	
 	@RequestMapping(value="/logingo.do")

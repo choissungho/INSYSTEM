@@ -1,0 +1,30 @@
+<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+			<div class="col-md-2 w-70 h-100 bg-dark">
+				<div class="bg-dark ms-2 mt-5">
+					<div class="list-group" id="list-tab" role="tablist">
+						  
+						  <label class="list-group-item list-group-item-primary" aria-current="true">개발자</label>
+						  
+						  <a class="list-group-item list-group-item-action" href="./m_reg.do">개발자 등록</a>
+					      <a class="list-group-item list-group-item-action" href="./m_list.do">개발자 리스트</a>
+					      <a class="list-group-item list-group-item-action" href="./m_ing.do">투입 중 개발자</a>
+					      <a class="list-group-item list-group-item-action" href="./m_end.do">투입 종료 개발자</a>
+	
+						  <label class="list-group-item list-group-item-primary" aria-current="true">프로젝트</label>
+						  
+						  <a class="list-group-item list-group-item-action" href="./p_reg.do">프로젝트 등록</a>
+					      <a class="list-group-item list-group-item-action" href="./p_search.do">서치중 프로젝트</a>
+					      <a class="list-group-item list-group-item-action" href="./p_ing.do">진행중 프로젝트</a>
+					      <a class="list-group-item list-group-item-action" href="./p_end.do">종료된 프로젝트</a>
+						  
+						  <label class="list-group-item list-group-item-primary" aria-current="true">관리자</label>
+						  
+						  <a class="list-group-item list-group-item-action" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="home">뭔지</a>
+					      <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="profile">모를</a>
+					      <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="messages">메뉴</a>
+					      <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="settings">임다</a>
+					
+					</div>
+				
+				</div>
+			</div>
