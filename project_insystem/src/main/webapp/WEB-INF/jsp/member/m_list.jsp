@@ -11,22 +11,18 @@
 <title>테스트하는페이지 2</title>
 <%@ include file="../common/jsList.jspf" %>
 </head>
-<style>
-html, body {
-    margin: 0;
-    height: 100%;
-    overflow: hidden;
-}
-</style>
 <body>
-	<div class="h-100">
-		<div class="row h-100">
-			<%@ include file="../common/sidebar.jspf" %>
-			
-			<div class="col-md-10 h-100 bg-primary">
-				멤버리스트
+	<%@ include file="../common/sidebar.jspf" %>
+	<section>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-9 ml-auto">
+					<div class="row pt-5 mt-3 mb-5">
+						개발자 리스트 페이지
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 </body>
 </html>
