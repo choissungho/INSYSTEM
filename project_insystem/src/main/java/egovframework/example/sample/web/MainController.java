@@ -72,38 +72,34 @@ public class MainController {
 		else {
 			model.addAttribute("userinfo",userinfo);
 			session.setAttribute("loginId",userinfo);
-			return "sample/test1";
+			return "project/p_list";
 		}
 	}
 	
 
 	
-	@RequestMapping(value="signup.do")
+	@RequestMapping(value="/signup.do")
 	public String signupPage(ModelMap model, @RequestParam Map<String, Object> params){
-		
+
 		int result = mainService.idcheck(params);
-		
+
 		try{
-			if(result ==1){
-				return "login";
+			if(result == 1){
+				return "sample/test1";
+				
 			}else if(result == 0){
 				mainService.mainsignup(params);
 			}
 		}catch(Exception e){
 			throw new RuntimeException();
 		}
-		return "login";
+		return "sample/login";
 		
 	}
 	
 	
-	@ResponseBody
-	@RequestMapping(value="/idcheck")
-	public int idcheck(ModelMap model, @RequestParam Map<String, Object> params) {
-		
-		int result = mainService.idcheck(params);
-		return result;
-	}
+
+
 	
 	
 	

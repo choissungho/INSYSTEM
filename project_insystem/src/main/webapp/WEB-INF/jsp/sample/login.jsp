@@ -77,9 +77,9 @@
 					<div class="btn-animate">
 						<button class="login_btn" type="submit">Login</button>
 					</div>
-					
+
 				</form>
-				<form id="mainsignup" class="form-signup" action="signup.do" method="post" name="form">
+				<form id="mainsignup" class="form-signup" action="./signup.do" method="post">
 					<label for="fullname">Full name</label> <input class="form-styling"
 						type="text" id="user_name" name="user_name" placeholder="" /> <label for="email">ID</label>
 					<input class="form-styling" type="text" id="user_id" name="user_id" placeholder="" />
