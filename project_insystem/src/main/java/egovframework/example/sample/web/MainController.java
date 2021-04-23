@@ -41,24 +41,8 @@ public class MainController {
 	@RequestMapping(value="/login.do")
 	public String loginPage(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
 		return "sample/login";
-		
-/*		if(session.getAttribute("loginId") != null) {
-			return "forward:./test1.do";
-		}
-		return "./login";*/
 	}
-	
-	@RequestMapping(value="/m_list.do")
-	public String memberList(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
-		System.out.println("멤버리스트 페이지");
-		return "member/m_list";
-	}
-	@RequestMapping(value="/m_reg.do")
-	public String memberReg(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
-		System.out.println("멤버등록 페이지");
-		return "member/m_reg";
-	}
-	
+
 	@RequestMapping(value="/logingo.do")
 	public String logingoPage(ModelMap model, @RequestParam Map<String, Object> params,HttpSession session) {
 		Map<String, Object> userinfo = mainService.mainlogin(params);
@@ -72,12 +56,10 @@ public class MainController {
 		else {
 			model.addAttribute("userinfo",userinfo);
 			session.setAttribute("loginId",userinfo);
-			return "project/p_list";
+			return "sample/main";
 		}
 	}
-	
 
-	
 	@RequestMapping(value="/signup.do")
 	public String signupPage(ModelMap model, @RequestParam Map<String, Object> params){
 
@@ -97,10 +79,69 @@ public class MainController {
 		
 	}
 	
+//	사이드바 페이징 처리
 	
-
-
+	//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	//				멤버 쪽
+	//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	@RequestMapping(value="/m_list.do")
+	public String memberList(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
+		System.out.println("개발자리스트 페이지");
+		return "member/m_list";
+	}
+	@RequestMapping(value="/m_reg.do")
+	public String memberReg(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
+		System.out.println("개발자등록 페이지");
+		return "member/m_reg";
+	}
+	@RequestMapping(value="/m_ing.do")
+	public String memberIng(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
+		System.out.println("투입중 개발자 페이지");
+		return "member/m_ing";
+	}
+	@RequestMapping(value="/m_end.do")
+	public String memberEnd(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
+		System.out.println("투입종료된 개발자 페이지");
+		return "member/m_end";
+	}
 	
 	
+	//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	//				프로젝트 쪽
+	//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	@RequestMapping(value="/p_list.do")
+	public String projectList(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
+		System.out.println("프로젝트 리스트 페이지");
+		return "project/p_list";
+	}
+	@RequestMapping(value="/p_reg.do")
+	public String projectReg(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
+		System.out.println("프로젝트 등록 페이지");
+		return "project/p_reg";
+	}
+	@RequestMapping(value="/p_ing.do")
+	public String projectIng(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
+		System.out.println("진행중 프로젝트 페이지");
+		return "project/p_ing";
+	}
+	@RequestMapping(value="/p_end.do")
+	public String projectEnd(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
+		System.out.println("종료된 프로젝트 페이지");
+		return "project/p_end";
+	}
+	
+	//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	//				메인 / 관리자 쪽
+	//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	@RequestMapping(value="/main.do")
+	public String main(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
+		System.out.println("메인 페이지");
+		return "sample/main";
+	}
+	@RequestMapping(value="/admin.do")
+	public String admin(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
+		System.out.println("관리자 페이지");
+		return "sample/admin";
+	}
 	
 }
