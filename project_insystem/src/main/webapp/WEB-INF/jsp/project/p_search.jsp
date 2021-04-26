@@ -9,21 +9,45 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <title>테스트하는페이지 2</title>
-<%@ include file="../common/jsList.jspf" %>
+<%@ include file="../common/jsList.jspf"%>
 </head>
 <body>
-	<%@ include file="../common/sidebar.jspf" %>
+	<%@ include file="../common/sidebar.jspf"%>
 	<!--@@@@@@@@@@@@@@@ 	콘텐츠부분 	@@@@@@@@@@@@@@@@@-->
-	<section>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-9 ml-auto">
-					<div class="row pt-5 mt-3 mb-5">
-						개발자 등록 페이지
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	<div class="container" style="margin-top: 5%;">
+		<h1>서칭중 프로젝트</h1>
+	</div>
+
+	<table class="container table table-striped">
+		<c:forEach items="${result}" var="list">
+			<thead>
+				<tr>
+					<th scope="col">번호</th>
+					<th scope="col">프로젝트명</th>
+					<th scope="col">주관기관/주관사</th>
+					<th scope="col">프로젝트 지역</th>
+					<th scope="col">시작일시</th>
+					<th scope="col">종료일시</th>
+					<th scope="col">연장일시</th>
+					<th scope="col">기타설명</th>
+					<th scope="col">삭제</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					<td>6</td>
+					<td>7</td>
+					<td>8</td>
+					<td>9</td>
+				</tr>
+
+			</tbody>
+		</c:forEach>
+	</table>
 </body>
 </html>
