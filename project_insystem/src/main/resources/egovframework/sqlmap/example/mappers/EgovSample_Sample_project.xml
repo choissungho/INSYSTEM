@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="egovframework.example.sample.service.impl.ProjectMapper">
+
+	<sql id="projectSearch">
+		select
+			<choose>
+				<when test="orderName == 'pj_no'">
+					row_number() over (order by pj_no ${@kr.co.iway.is.common.OrderbyClass@callOrderMethod(orderType)}) rnum,
+				</when>
+				<!-- select row_number() over (order by pj_no desc) rnum, pj_no, pj_nm, pj_area, pj_people, pj_organ, pj_company, pj_startdt, pj_enddt, pj_extyn, pj_extdt, pj_endyn, pj_crqfcyn, pj_content, pj_delyn from project_data -->
+				<when test="orderName == 'pj_nm'">
+					row_number() over (order by pj_nm ${@kr.co.iway.is.common.OrderbyClass@callOrderMethod(orderType)}) rnum,
+				</when>
+				<when test="orderName == 'pj_organ'">
+					row_number() over (order by pj_organ ${@kr.co.iway.is.common.OrderbyClass@callOrderMethod(orderType)}) rnum,
+				</when>
+				<when test="orderName == 'pj_area'">
+					row_number() over (order by pj_area ${@kr.co.iway.is.common.OrderbyClass@callOrderMethod(orderType)}) rnum,
+				</when>
+				<when test="orderName == 'pj_startdt'">
+					row_number() over (order by pj_startdt ${@kr.co.iway.is.common.OrderbyClass@callOrderMethod(orderType)}) rnum,
+				</when>
+				<when test="orderName == 'pj_enddt'">
+					row_number() over (order by pj_enddt ${@kr.co.iway.is.common.OrderbyClass@callOrderMethod(orderType)}) rnum,
+				</when>
+				<when test="orderName == 'pj_extdt'">
+					row_number() over (order by pj_extdt ${@kr.co.iway.is.common.OrderbyClass@callOrderMethod(orderType)}) rnum,
+				</when>
+				<!-- <when test="orderName == 'pj_content'">
+					row_number() over (order by pj_content ${@kr.co.iway.is.common.OrderbyClass@callOrderMethod(orderType)}) rnum,
+				</when> -->
+				<otherwise>
+					row_number() over (order by pj_no ${@kr.co.iway.is.common.OrderbyClass@callOrderMethod(orderType)}) rnum,
+				</otherwise>
+			</choose>
+			pj_no,
+			pj_nm,
+			pj_area,
+			pj_people,
+			pj_organ,
+			pj_company,
+			pj_startdt,
+			pj_enddt,
+			pj_extyn,
+			pj_extdt,
+			pj_endyn,
+			pj_crqfcyn,
+			pj_content,
+			pj_delyn
+		from project_data
+		where 1=1
+		<!--and pj_delyn = 'N' -->
+		<!--  and pj_startdt <![CDATA[>=]]> #{nowDate}		--> 
+		and pj_endyn = 'S'
+		<choose>
+			<when test="selOpt == 'all'">
+				and (pj_nm like '%'||#{keyword}||'%' or pj_area like '%'||#{keyword}||'%' or pj_organ like '%'||#{keyword}||'%' or pj_company like '%'||#{keyword}||'%' or pj_content like '%'||#{keyword}||'%')
+			</when>
+		</choose>
+	</sql>
+
+
+	<insert id="mainsignup" parameterType="java.util.Map">
+		insert into insystem.PRJCT_LL (MNGR_NO,MNGR_ID,MNGR_PW,MNGR_NM)
+		values (nextval('seq_user'), #{user_id}, #{user_pass}, #{user_name})
+	</insert>
+
+
+</mapper>
