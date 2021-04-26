@@ -114,7 +114,7 @@ public class MainController {
 		System.out.println("프로젝트 등록 페이지");
 		return "project/p_reg";
 	}
-	@RequestMapping(value="/p_saerch.do")
+	@RequestMapping(value="/p_search.do")
 	public String projectSearch(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
 		System.out.println("서칭중 프로젝트 페이지");
 		return "project/p_search";
