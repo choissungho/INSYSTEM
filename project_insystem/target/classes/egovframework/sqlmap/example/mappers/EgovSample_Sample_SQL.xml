@@ -3,22 +3,23 @@
 
 
 <mapper namespace="egovframework.example.sample.service.impl.MainMapper">
-	  	
-	  	<select id="mainlogin" parameterType="java.util.Map" resultType="egovMap">
-			select * from insystem.mngr_ll
-			where MNGR_ID = #{user_id}
-			and MNGR_PW = #{user_pass}
-		</select>
-		 
-		<insert id="mainsignup" parameterType="java.util.Map">
-			insert into insystem.mngr_ll (MNGR_NO,MNGR_ID,MNGR_PW,MNGR_NM)
-			values (nextval('seq_user'), #{user_id}, #{user_pass}, #{user_name})
-		</insert>
+
+	<select id="mainlogin" parameterType="java.util.Map" resultType="egovMap">
+		select * from insystem.mngr_ll
+		where MNGR_ID = #{user_id}
+		and MNGR_PW = #{user_pass}
+	</select>
+
+	<insert id="mainsignup" parameterType="java.util.Map">
+		insert into insystem.mngr_ll (MNGR_NO,MNGR_ID,MNGR_PW,MNGR_NM)
+		values (nextval('seq_user'), #{user_id}, #{user_pass}, #{user_name})
+	</insert>
 
 
-		<select id="idcheck" resultType="Integer">
-			select count(*) from insystem.mngr_ll
-			where MNGR_ID = #{user_id}
-		</select>
+	<select id="idcheck" resultType="Integer">
+		select count(*) from insystem.mngr_ll
+		where MNGR_ID = #{user_id}
+	</select>
+
 
 </mapper>

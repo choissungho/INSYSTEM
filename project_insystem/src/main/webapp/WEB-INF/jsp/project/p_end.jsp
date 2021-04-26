@@ -19,7 +19,7 @@
 			<div class="row">
 				<div class="col-lg-9 ml-auto">
 					<div class="row pt-5 mt-3 mb-5">
-						개발자 등록 페이지
+						종료된 프로젝트
 					</div>
 				</div>
 			</div>
