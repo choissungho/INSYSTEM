@@ -16,7 +16,7 @@
 						</div>
 						
 						<ul class="navbar-nav flex-column mt-4">
-							<li class="nav-item">
+							<li class="nav-item border-bottom pb-3">
 								<a href="./main.do" class="nav-link text-white p-3 mb-2 current">
 									· 메인페이지
 								</a>

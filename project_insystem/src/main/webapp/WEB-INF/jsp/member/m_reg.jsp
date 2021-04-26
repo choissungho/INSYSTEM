@@ -15,14 +15,167 @@
 	<%@ include file="../common/sidebar.jspf" %>
 	<section>
 		<div class="container-fluid">
-			<div class="row">
+			<div class="row justify-content-center align-items-center">
 				<div class="col-lg-9 ml-auto">
-					<div class="row pt-5 mt-3 mb-5">
-						개발자 등록 페이지
+					<div class="row pt-5 mt-3 mb-2 border-bottom">
+						<h3>개발자 등록</h3>
 					</div>
-				</div>
+					
+					<div class="container">
+					
+			<form class="form-inline" method="post">
+				<div class="col-sm-12 pt-3">
+					<div class="card">
+		                <div class="card-header card-header-primary">
+		                	<h4 class="card-title"><i class="fas fa-square"></i> 개발자 기본사항</h4>
+		                    <p class="card-catagory"></p>
+		                </div>
+		                
+							<table class="table">
+								<tbody>
+									<tr style="line-height:32px;">
+										<td>개발자 이름</td>
+										<td>
+											<input type="text" name="admin_id" class="form-control" maxlength="4">
+										</td>
+										<td>개발자 구분</td>
+		                                <td>
+		                                    <select class="form-control">
+										      <option>개발자</option>
+										      <option>퍼블리셔</option>
+										      <option>디자이너</option>
+										      <option>DBA</option>
+										      <option>TA</option>
+										    </select>
+		                                </td>
+									</tr>
+									
+									<tr style="line-height:32px;">
+										<td>연락처</td>
+										<td>
+											<select class="form-control">
+										      <option>010</option>
+										      <option>011</option>
+										      <option>017</option>
+										    </select>
+										    <input type="text" name="" class="form-control" style="width:70px;" placeholder="1234" maxlength="4">
+										    <input type="text" name="" class="form-control" style="width:70px;" placeholder="1234" maxlength="4">
+										</td>
+							
+										<td>거주지</td>
+		                                <td>
+		                                    <input type="text" name="admin_name" class="form-control" placeholder="경기도-안양">
+		                                </td>
+									</tr>
+									
+									<tr style="line-height:32px;">
+										<td>이메일</td>
+										<td>
+										    <input type="text" name="admin_name" class="form-control" placeholder="test@test.com">
+										</td>
+							
+										<td>등급</td>
+		                                <td>
+		                                    <select class="form-control">
+										      <option>특급</option>
+										      <option>고급</option>
+										      <option>중급</option>
+										      <option>초급</option>
+										      <option>신입</option>
+										    </select>
+		                                </td>
+									</tr>
+									
+									<tr style="line-height:32px;">
+										<td>정규직 경력</td>
+										<td>
+										    <input type="text" name="1" class="form-control" style="width:70px;" placeholder="년" maxlength="2"/>
+										    <input type="text" name="2" class="form-control" style="width:70px;" placeholder="개월" maxlength="2"/>
+										</td>
+							
+										<td>비정규직 경력</td>
+		                                <td>
+		                                    <input type="text" name="3" class="form-control" style="width:70px;" placeholder="년" maxlength="2"/>
+										    <input type="text" name="4" class="form-control" style="width:70px;" placeholder="개월" maxlength="2"/>
+		                                </td>
+									</tr>
+									
+									<tr style="line-height:32px;">
+										<td>단가</td>
+										<td>
+										    <input type="text" name="admin_name" class="form-control" placeholder="500" maxlength="4">
+										</td>
+							
+										<td>관리자</td>
+										<td>
+											<input type="text" name="admin_name" class="form-control" value="관라지이름" maxlength="4" disabled>
+										</td>
+									</tr>
+									
+									<tr style="line-height:32px;">
+										<td>코사 여부</td>
+										<td>
+											<label style="width:50px;">
+										    <input type="checkbox" name="admin_name" class="form-control">해당</input>
+											</label>
+										</td>
+							
+										<td>정규직 여부</td>
+										<td>
+											<label style="width:50px;">
+											<input type="checkbox" name="admin_name" class="form-control" >해당</input>
+											</label>
+										</td>
+									</tr>
+										
+								
+								</tbody>
+							</table>			
+				</div><!-- 카드 끝나는 div -->
+		           
+		           
+		            <div class="card">
+		                <div class="card-header card-header-primary">
+		                    <h4 class="card-title"><i class="fas fa-square"></i> 개발자 자격사항</h4>
+		                    <p class="card-catagory"></p>
+		                </div>
+		                    
+		                        <table class="table">
+		                            <tbody>
+		                            <tr style="line-height:32px;">
+		                                <td>자격증</td>
+		                                <td>
+		                                    <input type="text" name="admin_id" class="form-control" value="">
+		                                </td>
+		                                <td>사용언어</td>
+		                                <td>
+		                                    <input type="text" name="admin_name" class="form-control" value="">
+		                                </td>                        
+		                            </tr>
+		                            <tr>
+		                                <td>자격증</td>
+		                                <td>
+		                                    <input type="text" name="admin_passwd1" class="form-control" maxlength="10" value="">                                    
+		                                </td>
+		                                <td>사용언어</td>
+		                                <td>
+		                                    <input type="text" name="admin_passwd2" class="form-control" maxlength="10" value="">                                    
+		                                </td>
+		                            </tr>  
+		                            </tbody>
+		                        </table>
+		            </div><!-- 카드 끝나는 div -->
+					 
+					 			<div class="text-center mt-2">
+							        <button type="button" class="btn btn-primary">등록하기</button>
+							        <button type="button" class="btn btn-secondary">취소하기</button>
+							    </div>
+						</div>
+			    	</form>
+				</div><!-- div컨테이너 끝 -->
 			</div>
 		</div>
-	</section>
+	</div>
+</section>
 </body>
 </html>
