@@ -37,27 +37,11 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	@Override
-	void member_reg(Map<String, Object> params)
-	
-	@Override
 	public void member_reg(Map<String, Object> params) {
 		
-		mainMapper.mainsignup(params);
+		memberMapper.member_reg(params);
 	}
 	
-	
 
-//	@Override
-//	public Map<String, Object> mainlogin(Map<String, Object> params) {
-//		
-//		return mainMapper.mainlogin(params);
-//		
-//	}
-//
-//	@Override
-//	public void mainsignup(Map<String, Object> params) {
-//		
-//		mainMapper.mainsignup(params);
-//	}
 	
 }

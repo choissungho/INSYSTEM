@@ -8,6 +8,8 @@ import egovframework.rte.psl.dataaccess.mapper.Mapper;
 public interface MemberMapper {
 	
 	public int test(Map<String, Object> params);
+	
+	public void member_reg(Map<String, Object> params);
 
 }
  
