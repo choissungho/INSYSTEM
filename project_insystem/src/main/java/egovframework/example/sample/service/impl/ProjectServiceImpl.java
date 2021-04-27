@@ -17,6 +17,9 @@ package egovframework.example.sample.service.impl;
 
 import egovframework.example.sample.service.ProjectService;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +29,12 @@ public class ProjectServiceImpl implements ProjectService {
 	@Autowired
 
 	private ProjectMapper projectMapper;
+
+	@Override
+	public List<Map<String, Object>> projectSearch(Map<String, Object> params) {
+		
+		return projectMapper.projectSearch(params);
+	}
 
 	
 }

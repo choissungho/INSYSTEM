@@ -15,8 +15,12 @@
  */
 package egovframework.example.sample.service;
 
+import java.util.List;
+import java.util.Map;
 
 public interface ProjectService {
+
+	public List<Map<String, Object>> projectSearch(Map<String, Object> param);
 
 
 }

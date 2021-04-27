@@ -60,24 +60,6 @@ public class MainController {
 		}
 	}
 
-	@RequestMapping(value="/signup.do")
-	public String signupPage(ModelMap model, @RequestParam Map<String, Object> params){
-
-		int result = mainService.idcheck(params);
-
-		try{
-			if(result == 1){
-				return "sample/test1";
-				
-			}else if(result == 0){
-				mainService.mainsignup(params);
-			}
-		}catch(Exception e){
-			throw new RuntimeException();
-		}
-		return "sample/login";
-		
-	}
 	
 //	사이드바 페이징 처리
 	
@@ -106,9 +88,9 @@ public class MainController {
 	}
 	
 	
-	//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@http://localhost:8080/project_insystem/project/search1.do
 	//				프로젝트 쪽
-	//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@http://localhost:8080/project_insystem/p_search.do
 	@RequestMapping(value="/p_reg.do")
 	public String projectReg(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
 		System.out.println("프로젝트 등록 페이지");
@@ -117,7 +99,7 @@ public class MainController {
 	@RequestMapping(value="/p_search.do")
 	public String projectSearch(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
 		System.out.println("서칭중 프로젝트 페이지");
-		return "project/p_search";
+		return "forward:/project/search1.do";
 	}
 	@RequestMapping(value="/p_ing.do")
 	public String projectIng(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
