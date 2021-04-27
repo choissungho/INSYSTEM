@@ -19,32 +19,27 @@
 	</div>
 
 	<table class="container table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">번호</th>
+				<th scope="col">프로젝트명</th>
+				<th scope="col">주관기관/주관사</th>
+				<th scope="col">프로젝트 지역</th>
+				<th scope="col">시작일시</th>
+				<th scope="col">종료일시</th>
+				<th scope="col">기타설명</th>
+			</tr>
+		</thead>
 		<c:forEach items="${result}" var="list">
-			<thead>
-				<tr>
-					<th scope="col">번호</th>
-					<th scope="col">프로젝트명</th>
-					<th scope="col">주관기관/주관사</th>
-					<th scope="col">프로젝트 지역</th>
-					<th scope="col">시작일시</th>
-					<th scope="col">종료일시</th>
-					<th scope="col">연장일시</th>
-					<th scope="col">기타설명</th>
-					<th scope="col">삭제</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>1</td>
-					<td>2</td>
-					<td>3</td>
-					<td>4</td>
-					<td>5</td>
-					<td>6</td>
-					<td>7</td>
-					<td>8</td>
-					<td>9</td>
-				</tr>
+			<tr>
+				<td>${list.prjctNo}</td>
+				<td>${list.prjctNm}</td>
+				<td>${list.prjctMnnst}/ ${list.prjctTruentpr}</td>
+				<td>${list.lcAtpt}</td>
+				<td>${list.prjctBgnde}</td>
+				<td>${list.prjctEndde}</td>
+				<td>${list.prjctRm}</td>
+			</tr>
 
 			</tbody>
 		</c:forEach>
