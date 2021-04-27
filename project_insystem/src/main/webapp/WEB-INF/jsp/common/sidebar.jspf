@@ -17,61 +17,61 @@
 						
 						<ul class="navbar-nav flex-column mt-4">
 							<li class="nav-item border-bottom pb-3">
-								<a href="./main.do" class="nav-link text-white p-3 mb-2 current">
+								<a href="/project_insystem/main.do" class="nav-link text-white p-3 mb-2 current">
 									· 메인페이지
 								</a>
 							</li>
 						
 							<li class="nav-item">
-								<a href="./m_reg.do" class="nav-link text-white p-3 mb-2 sidebar-link">
+								<a href="/project_insystem/m_reg.do" class="nav-link text-white p-3 mb-2 sidebar-link">
 									· 개발자 등록
 								</a>
 							</li>
 							
 							<li class="nav-item">
-								<a href="./m_list.do" class="nav-link text-white p-3 mb-2 sidebar-link">
+								<a href="/project_insystem/m_list.do" class="nav-link text-white p-3 mb-2 sidebar-link">
 									· 개발자 리스트
 								</a>
 							</li>
 							
 							<li class="nav-item">
-								<a href="./m_ing.do" class="nav-link text-white p-3 mb-2 sidebar-link">
+								<a href="/project_insystem/m_ing.do" class="nav-link text-white p-3 mb-2 sidebar-link">
 									· 투입중 개발자
 								</a>
 							</li>
 							
 							<li class="nav-item border-bottom">
-								<a href="./m_end.do" class="nav-link text-white p-3 mb-2 sidebar-link">
+								<a href="/project_insystem/m_end.do" class="nav-link text-white p-3 mb-2 sidebar-link">
 									· 투입종료 개발자
 								</a>
 							</li>
 							
 							<li class="nav-item">
-								<a href="./p_reg.do" class="nav-link text-white p-3 mb-2 sidebar-link">
+								<a href="/project_insystem/p_reg.do" class="nav-link text-white p-3 mb-2 sidebar-link">
 									· 프로젝트 등록
 								</a>
 							</li>
 							
 							<li class="nav-item">
-								<a href="./p_search.do" class="nav-link text-white p-3 mb-2 sidebar-link">
+								<a href="/project_insystem/p_search.do" class="nav-link text-white p-3 mb-2 sidebar-link">
 									· 서칭중 프로젝트
 								</a>
 							</li>
 							
 							<li class="nav-item">
-								<a href="./p_ing.do" class="nav-link text-white p-3 mb-2 sidebar-link">
+								<a href="/project_insystem/p_ing.do" class="nav-link text-white p-3 mb-2 sidebar-link">
 									· 진행중 프로젝트
 								</a>
 							</li>
 							
 							<li class="nav-item border-bottom">
-								<a href="./p_end.do" class="nav-link text-white p-3 mb-2 sidebar-link">
+								<a href="/project_insystem/p_end.do" class="nav-link text-white p-3 mb-2 sidebar-link">
 									· 종료된  프로젝트
 								</a>
 							</li>
 							
 							<li class="nav-item">
-								<a href="./admin.do" class="nav-link text-white p-3 mb-2 sidebar-link">
+								<a href="/project_insystem/admin.do" class="nav-link text-white p-3 mb-2 sidebar-link">
 									· 관리자
 								</a>
 							</li>

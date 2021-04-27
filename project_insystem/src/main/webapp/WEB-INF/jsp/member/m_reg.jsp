@@ -23,7 +23,7 @@
 					
 					<div class="container">
 					
-			<form class="form-inline" method="post">
+			<form class="form-inline" method="post" action="/project_insystem/member/m_reg.do">
 				<div class="col-sm-12 pt-3">
 					<div class="card">
 		                <div class="card-header card-header-primary">
@@ -36,11 +36,11 @@
 									<tr style="line-height:32px;">
 										<td>개발자 이름</td>
 										<td>
-											<input type="text" name="admin_id" class="form-control" maxlength="4">
+											<input type="text" id="dvlpr_nm" name="dvlpr_nm" class="form-control" maxlength="4">
 										</td>
 										<td>개발자 구분</td>
 		                                <td>
-		                                    <select class="form-control">
+		                                    <select class="form-control" id="dvlpr_se" name="dvlpr_se">
 										      <option>개발자</option>
 										      <option>퍼블리셔</option>
 										      <option>디자이너</option>
@@ -53,30 +53,30 @@
 									<tr style="line-height:32px;">
 										<td>연락처</td>
 										<td>
-											<select class="form-control">
+											<select class="form-control" id="tel_no1" name="tel_no1">
 										      <option>010</option>
 										      <option>011</option>
 										      <option>017</option>
 										    </select>
-										    <input type="text" name="" class="form-control" style="width:70px;" placeholder="1234" maxlength="4">
-										    <input type="text" name="" class="form-control" style="width:70px;" placeholder="1234" maxlength="4">
+										    <input type="text" class="form-control" style="width:70px;" placeholder="1234" maxlength="4" id="tel_no2" name="tel_no2">
+										    <input type="text" class="form-control" style="width:70px;" placeholder="1234" maxlength="4" id="tel_no3" name="tel_no3">
 										</td>
 							
 										<td>거주지</td>
 		                                <td>
-		                                    <input type="text" name="admin_name" class="form-control" placeholder="경기도-안양">
+		                                    <input type="text" name="admin_name" class="form-control" placeholder="경기도-안양시" id="resdnc_atpt" name="resdnc_atpt">
 		                                </td>
 									</tr>
 									
 									<tr style="line-height:32px;">
 										<td>이메일</td>
 										<td>
-										    <input type="text" name="admin_name" class="form-control" placeholder="test@test.com">
+										    <input type="text" name="admin_name" class="form-control" placeholder="test@test.com" id="email" name="email">
 										</td>
 							
 										<td>등급</td>
 		                                <td>
-		                                    <select class="form-control">
+		                                    <select class="form-control" id="grad" name="grad">
 										      <option>특급</option>
 										      <option>고급</option>
 										      <option>중급</option>
@@ -89,26 +89,26 @@
 									<tr style="line-height:32px;">
 										<td>정규직 경력</td>
 										<td>
-										    <input type="text" name="1" class="form-control" style="width:70px;" placeholder="년" maxlength="2"/>
-										    <input type="text" name="2" class="form-control" style="width:70px;" placeholder="개월" maxlength="2"/>
+										    <input type="text" class="form-control" style="width:70px;" placeholder="년" maxlength="2" id="rgllbr_yy" name="rgllbr_yy"/>
+										    <input type="text" class="form-control" style="width:70px;" placeholder="개월" maxlength="2" id="rgllbr_mt" name="rgllbr_mt"/>
 										</td>
 							
 										<td>비정규직 경력</td>
 		                                <td>
-		                                    <input type="text" name="3" class="form-control" style="width:70px;" placeholder="년" maxlength="2"/>
-										    <input type="text" name="4" class="form-control" style="width:70px;" placeholder="개월" maxlength="2"/>
+		                                    <input type="text" class="form-control" style="width:70px;" placeholder="년" maxlength="2" id="lrgllbr_yy" name="lrgllbr_yy"/>
+										    <input type="text" class="form-control" style="width:70px;" placeholder="개월" maxlength="2" id="lrgllbr_mt" name="lrgllbr_mt"/>
 		                                </td>
 									</tr>
 									
 									<tr style="line-height:32px;">
 										<td>단가</td>
 										<td>
-										    <input type="text" name="admin_name" class="form-control" placeholder="500" maxlength="4">
+										    <input type="text" name="admin_name" class="form-control" placeholder="500" maxlength="4" id="untpc" name="untpc">
 										</td>
 							
 										<td>관리자</td>
 										<td>
-											<input type="text" name="admin_name" class="form-control" value="관라지이름" maxlength="4" disabled>
+											<input type="text" name="admin_name" class="form-control" value="관라지이름" maxlength="4" id="reg_admin" name="reg_admin" disabled >
 										</td>
 									</tr>
 									
@@ -116,14 +116,14 @@
 										<td>코사 여부</td>
 										<td>
 											<label style="width:50px;">
-										    <input type="checkbox" name="admin_name" class="form-control">해당</input>
+										    <input type="checkbox" class="form-control"  value="Y" id="cosa_yn" name="cosa_yn"/>해당
 											</label>
 										</td>
 							
 										<td>정규직 여부</td>
 										<td>
 											<label style="width:50px;">
-											<input type="checkbox" name="admin_name" class="form-control" >해당</input>
+											<input type="checkbox" class="form-control"  value="Y" id="rgllbr_yn" name="rgllbr_yn"/>해당
 											</label>
 										</td>
 									</tr>
@@ -145,21 +145,21 @@
 		                            <tr style="line-height:32px;">
 		                                <td>자격증</td>
 		                                <td>
-		                                    <input type="text" name="admin_id" class="form-control" value="">
+		                                    <input type="text" name="admin_id" class="form-control" value="" id="" name="">
 		                                </td>
 		                                <td>사용언어</td>
 		                                <td>
-		                                    <input type="text" name="admin_name" class="form-control" value="">
+		                                    <input type="text" name="admin_name" class="form-control" value="" id="" name="">
 		                                </td>                        
 		                            </tr>
 		                            <tr>
 		                                <td>자격증</td>
 		                                <td>
-		                                    <input type="text" name="admin_passwd1" class="form-control" maxlength="10" value="">                                    
+		                                    <input type="text" name="admin_passwd1" class="form-control" maxlength="10" value="" id="" name="">                                    
 		                                </td>
 		                                <td>사용언어</td>
 		                                <td>
-		                                    <input type="text" name="admin_passwd2" class="form-control" maxlength="10" value="">                                    
+		                                    <input type="text" name="admin_passwd2" class="form-control" maxlength="10" value="" id="" name="">                                    
 		                                </td>
 		                            </tr>  
 		                            </tbody>
@@ -167,8 +167,8 @@
 		            </div><!-- 카드 끝나는 div -->
 					 
 					 			<div class="text-center mt-2">
-							        <button type="button" class="btn btn-primary">등록하기</button>
-							        <button type="button" class="btn btn-secondary">취소하기</button>
+							        <button type="submit" class="btn btn-primary">등록하기</button>
+							        <button type="button" class="btn btn-secondary" onclick="location.href='/project_insystem/main.do'">취소하기</button>
 							    </div>
 						</div>
 			    	</form>
