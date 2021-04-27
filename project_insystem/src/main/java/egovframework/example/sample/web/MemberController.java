@@ -52,7 +52,7 @@ public class MemberController {
 		System.out.println(params);
 		
 		memberService.member_reg(params);
-		
+		System.out.println("성공적가입");
 //		int result = memberService.test(params);
 //		System.out.println(result);
 		return "member/m_reg";

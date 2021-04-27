@@ -64,14 +64,14 @@
 							
 										<td>거주지</td>
 		                                <td>
-		                                    <input type="text" name="admin_name" class="form-control" placeholder="경기도-안양시" id="resdnc_atpt" name="resdnc_atpt">
+		                                    <input type="text" class="form-control" placeholder="경기도-안양시" id="resdnc_atpt" name="resdnc_atpt">
 		                                </td>
 									</tr>
 									
 									<tr style="line-height:32px;">
 										<td>이메일</td>
 										<td>
-										    <input type="text" name="admin_name" class="form-control" placeholder="test@test.com" id="email" name="email">
+										    <input type="text" class="form-control" placeholder="test@test.com" id="email" name="email">
 										</td>
 							
 										<td>등급</td>
@@ -103,12 +103,12 @@
 									<tr style="line-height:32px;">
 										<td>단가</td>
 										<td>
-										    <input type="text" name="admin_name" class="form-control" placeholder="500" maxlength="4" id="untpc" name="untpc">
+										    <input type="text" class="form-control" placeholder="500" maxlength="4" id="untpc" name="untpc">
 										</td>
 							
 										<td>관리자</td>
 										<td>
-											<input type="text" name="admin_name" class="form-control" value="관라지이름" maxlength="4" id="reg_admin" name="reg_admin" disabled >
+											<input type="text" class="form-control" value="관라지" maxlength="4" id="reg_admin" name="reg_admin" readonly >
 										</td>
 									</tr>
 									
