@@ -29,7 +29,7 @@
 							</li>
 							
 							<li class="nav-item">
-								<a href="/project_insystem/m_list.do" class="nav-link text-white p-3 mb-2 sidebar-link">
+								<a href="/project_insystem/member/m_list.do?p=${1}" class="nav-link text-white p-3 mb-2 sidebar-link">
 									· 개발자 리스트
 								</a>
 							</li>

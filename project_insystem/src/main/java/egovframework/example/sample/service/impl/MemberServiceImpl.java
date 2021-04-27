@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package egovframework.example.sample.service.impl;
+import java.util.List;
 import java.util.Map;
 
 import egovframework.example.sample.service.MemberService;
@@ -27,14 +28,12 @@ public class MemberServiceImpl implements MemberService {
 	@Autowired
 
 	private MemberMapper memberMapper;
-
+	
 	@Override
-	public int test(Map<String, Object> params) {
-		
-		int result =  memberMapper.test(params);
-		return result;
-		
+	public Integer member_count(int params){
+		return memberMapper.member_count(params);
 	}
+
 	
 	@Override
 	public void member_reg(Map<String, Object> params) {
@@ -42,6 +41,9 @@ public class MemberServiceImpl implements MemberService {
 		memberMapper.member_reg(params);
 	}
 	
-
+	@Override
+	public List<Map<String, Object>> member_list(int params) {
+		return memberMapper.member_list(params);
+	}
 	
 }

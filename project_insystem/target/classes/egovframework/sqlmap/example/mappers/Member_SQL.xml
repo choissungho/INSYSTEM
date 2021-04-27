@@ -4,53 +4,28 @@
 
 <mapper namespace="egovframework.example.sample.service.impl.MemberMapper">
 			
-			<select id="test" resultType="Integer">
-				select count(*) from insystem.userdata;
+			<!-- 페이징 처리 위한 개발자 카운트값 쿼리 -->
+			<select id="member_count" resultType="Integer">
+				select count(*) from insystem.DVLPR_LL where delete_yn='N';
 			</select>
 			
+			<!-- 개발자 리스트 페이징처리후 뿌려주는 쿼리 -->
+			<select id="member_list" resultType="egovMap" parameterType="Integer">
+				select * from insystem.dvlpr_ll order by insystem.dvlpr_ll.dvlpr_no desc limit 10 offset #{index};
+				
+<!-- 				select * from insystem.DVLPR_LL; -->
+			</select>
+			
+			<!-- 개발자 등록을 위한 삽입 쿼리 -->
 			<insert id="member_reg" parameterType="java.util.Map">
 				INSERT INTO insystem.DVLPR_LL (
-									DVLPR_NO,
-									DVLPR_NM,
-									DVLPR_SE,
-									TELNO1,
-									TELNO2,
-									TELNO3,
-									RESDNC_ATPT,
-									EMAIL,
-									GRAD,
-									RGLLBR_YY,
-									RGLLBR_MT,
-									IRGLLBR_YY,
-									IRGLLBR_MT,
-									COSA_YN,
-									UNTPC,
-									RGLLBR_YN,
-									FRST_REGISTER,
-									LAST_UPDUSR
-												)
-								VALUES
-										(
-											nextval('insystem.seq_dvlpr_no'),
-											#{dvlpr_nm},
-											#{dvlpr_se},
-											#{tel_no1},
-											#{tel_no2},
-											#{tel_no3},
-											#{resdnc_atpt},
-											#{email},
-											#{grad},
-											#{rgllbr_yy}::numeric,
-											#{rgllbr_mt}::numeric,
-											#{lrgllbr_yy}::numeric,
-											#{lrgllbr_mt}::numeric,
-											#{cosa_yn},
-											#{untpc}::numeric,
-											#{rgllbr_yn},
-											#{reg_admin},
-											#{reg_admin}
-										);
-				</insert>
+				DVLPR_NO,DVLPR_NM,DVLPR_SE,TELNO1,TELNO2,TELNO3,RESDNC_ATPT,EMAIL,GRAD,RGLLBR_YY,RGLLBR_MT,IRGLLBR_YY,IRGLLBR_MT,COSA_YN,UNTPC,RGLLBR_YN,FRST_REGISTER,LAST_UPDUSR
+				)
+				VALUES(
+				nextval('insystem.seq_dvlpr_no'),#{dvlpr_nm},#{dvlpr_se},#{tel_no1},#{tel_no2},#{tel_no3},#{resdnc_atpt},#{email},#{grad},
+				#{rgllbr_yy}::numeric,#{rgllbr_mt}::numeric,#{lrgllbr_yy}::numeric,#{lrgllbr_mt}::numeric,#{cosa_yn},#{untpc}::numeric,#{rgllbr_yn},#{reg_admin},#{reg_admin}
+				);
+			</insert>
 
 
 </mapper>

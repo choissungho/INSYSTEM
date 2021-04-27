@@ -69,7 +69,7 @@ public class MainController {
 	@RequestMapping(value="/m_list.do")
 	public String memberList(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
 		System.out.println("개발자리스트 페이지");
-		return "member/m_list";
+		return "redirect:/member/m_list.do";
 	}
 	@RequestMapping(value="/m_reg.do")
 	public String memberReg(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {

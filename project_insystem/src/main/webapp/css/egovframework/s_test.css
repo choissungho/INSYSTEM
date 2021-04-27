@@ -4,7 +4,7 @@
 	background-position:center;
 	background-repeat:no-repeat;
 	background-size:cover;
-	box-shadow: 5px 7px 25px #999;
+/* 	box-shadow: 5px 7px 25px #999; */
 }
 .border-bottom {
 	border-bottom:2px groove #eee;
