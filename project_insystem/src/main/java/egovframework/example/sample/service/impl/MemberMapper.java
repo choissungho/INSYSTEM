@@ -13,6 +13,8 @@ public interface MemberMapper {
 	public void member_reg(Map<String, Object> params);
 	
 	public List<Map<String, Object>> member_list(int params);
+	
+	public Map<String, Object> member_detail(int member);
 
 }
  

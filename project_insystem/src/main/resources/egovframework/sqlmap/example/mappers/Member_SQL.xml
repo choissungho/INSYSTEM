@@ -16,6 +16,13 @@
 <!-- 				select * from insystem.DVLPR_LL; -->
 			</select>
 			
+			
+			<!-- 개발자 상세페이지 값 뿌려주는 쿼리 -->
+			<select id="member_detail" resultType="egovMap" parameterType="Integer">
+				select * from insystem.dvlpr_ll where dvlpr_no = #{member};
+			</select>
+			
+			
 			<!-- 개발자 등록을 위한 삽입 쿼리 -->
 			<insert id="member_reg" parameterType="java.util.Map">
 				INSERT INTO insystem.DVLPR_LL (
@@ -26,6 +33,7 @@
 				#{rgllbr_yy}::numeric,#{rgllbr_mt}::numeric,#{lrgllbr_yy}::numeric,#{lrgllbr_mt}::numeric,#{cosa_yn},#{untpc}::numeric,#{rgllbr_yn},#{reg_admin},#{reg_admin}
 				);
 			</insert>
-
+			
+			
 
 </mapper>

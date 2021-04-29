@@ -20,6 +20,10 @@
 		select count(*) from insystem.mngr_ll
 		where MNGR_ID = #{user_id}
 	</select>
-
+	
+	<select id="memberoption" parameterType="String" resultType="egovMap">
+		select * from insystem.CMMN_CODE_SCLAS where MLSFC_CODE=#{code};
+	</select>
+	
 
 </mapper>

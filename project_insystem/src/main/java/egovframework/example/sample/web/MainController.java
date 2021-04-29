@@ -18,6 +18,7 @@ package egovframework.example.sample.web;
 
 import egovframework.example.sample.service.MainService;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -74,6 +75,18 @@ public class MainController {
 	@RequestMapping(value="/m_reg.do")
 	public String memberReg(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
 		System.out.println("개발자등록 페이지");
+		String code ="DEV004";
+		List<Map<String, Object>> option_list = mainService.memberoption(code);
+		model.addAttribute("lang_op", option_list);
+		
+		code ="DEV005";
+		List<Map<String, Object>> option_list2 = mainService.memberoption(code);
+		model.addAttribute("lang_op2", option_list2);
+		
+		code ="DEV006";
+		List<Map<String, Object>> option_list3 = mainService.memberoption(code);
+		model.addAttribute("licence_op", option_list3);
+		System.out.println(option_list3);
 		return "member/m_reg";
 	}
 	@RequestMapping(value="/m_ing.do")
@@ -85,6 +98,12 @@ public class MainController {
 	public String memberEnd(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
 		System.out.println("투입종료된 개발자 페이지");
 		return "member/m_end";
+	}
+	
+	@RequestMapping(value="/m_detail.do")
+	public String memberDetail(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
+		System.out.println("개발자 상세 페이지");
+		return "redirect:/member/m_detail.do";
 	}
 	
 	

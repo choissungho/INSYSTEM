@@ -11,8 +11,8 @@
 						<a href="#" class="navbar-brand text-white text-center d-block mx-auto py-3 mb-4 border-bottom">
 							아이웨이 내부시스템
 						</a>
-						<div class="border-bottom pb-3">
-							<label class="text-white">관리자 이름 나오는곳</label>
+						<div class="mx-auto border-bottom pb-3 pl-5">
+							<label class="text-white">${loginId.mngrNm}님 환영합니다.</label>
 						</div>
 						
 						<ul class="navbar-nav flex-column mt-4">

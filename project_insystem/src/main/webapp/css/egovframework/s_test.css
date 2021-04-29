@@ -17,6 +17,12 @@
 	border-radius:5px;
 }
 
+.sidebar-link:active{
+	background-color:#555;
+	border-radius:5px;
+}
+
+
 .current{
 	background-color: #f44336;
 	border-radius: 7px;

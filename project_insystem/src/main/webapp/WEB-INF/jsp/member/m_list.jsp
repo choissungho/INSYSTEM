@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="ui" uri="http://egovframework.gov/ctl/ui"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -18,9 +19,9 @@
 			<div class="row">
 				<div class="col-lg-10 ml-auto pl-5 pr-5">
 					<div class="row pt-5 mt-3 mb-2 border-bottom">
-						<h3>개발자 리스트</h3>
+						<h3>개2발자 리스트</h3>
 								
-								<table class="table table-hover">
+								<table class="table table-hover border-bottom">
 									<colgroup>
 										<col width="5%" />
 										<col width="5%" />
@@ -34,11 +35,10 @@
 										<col width="5%" />
 									</colgroup>
 									
-<%-- 									<caption style="cursor: pointer" onclick="location.href='./free.do?p=${1}'">자유 게시판</caption> --%>
+								
 									<thead class="thead-dark">
 										<tr>
 											<th>이름</th>
-<!-- 											<th class="text-center">제목</th> -->
 											<th>개발 구분</th>
 											<th>거주지</th>
 											<th>전화</th>
@@ -49,8 +49,8 @@
 									</thead>
 									<tbody>
 										<c:forEach var="board" items="${listmember}">
-							<%-- 				<tr style="cursor: pointer" onclick="aaa(${board.btNo});"> --%>
-											<tr style="cursor: pointer" onclick="location.href='./read.do?board_Num=${board.dvlprNo}'">
+							<%-- 				<tr style="cursor: pointer" onclick="aaa(${board.btNo});"> --%>				
+											<tr style="cursor: pointer" onclick="location.href='./m_detail.do?member=${board.dvlprNo}'">
 													<td>${board.dvlprNm}</td>
 													<td>${board.dvlprSe} / ${board.grad}</td>
 													<td>${board.resdncAtpt}</td>
@@ -65,10 +65,30 @@
 													<td>${board.untpc}</td>
 											</tr>
 										</c:forEach>
+										
+								<!-- 	그리드 리스트에서 끝 쪽에 남는 공간을 빈 데이터로 채워주는 곳 -->
+										<c:if test="${fn:length(listmember) < 10}">
+											<c:forEach var="i" begin="${1}" end="${10 - fn:length(listmember)}">
+									    		<tr>
+									    			<td disabled>　　</td>
+													<td>　　</td>
+													<td>　　</td>
+													<td>　　</td>
+													<td>　　</td>
+													<td>　　</td>
+													<td>　　</td>
+									    		</tr>
+									    	</c:forEach>
+								    	</c:if>	
 									</tbody>
 								</table>
 								
-								<nav aria-label="Page navigation example">
+								
+								<!--@@@@@@@@@@@@페이징 네비게이션@@@@@@@@@@@@ -->
+								
+								
+								
+								<nav aria-label="Page navigation example" class="mx-auto">
 								  <ul class="pagination justify-content-center">
 								    <li class="page-item">
 									<c:if test="${start - 10 > 0}">
@@ -100,7 +120,7 @@
 								  </ul>
 								</nav>
 								
-								
+								<!--@@@@@@@@@@@@페이징 네비게이션 끝@@@@@@@@@@@@ -->
 								
 								
 								

@@ -46,4 +46,9 @@ public class MemberServiceImpl implements MemberService {
 		return memberMapper.member_list(params);
 	}
 	
+	@Override
+	public Map<String, Object> member_detail(int member) {
+		return memberMapper.member_detail(member);
+	}
+	
 }

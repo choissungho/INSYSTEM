@@ -49,7 +49,7 @@ public class MemberController {
 //	}
 	@RequestMapping(value="/member/m_reg.do")
 	public String member_reg(ModelMap model, @RequestParam Map<String, Object> params){
-		System.out.println("뭐라도나와야지");
+		System.out.println("가입 컨트롤러");
 		System.out.println(params);
 		
 		memberService.member_reg(params);
@@ -68,6 +68,17 @@ public class MemberController {
 //		
 //		return "member/m_list";
 //	}
+	
+	@RequestMapping(value="/member/m_detail.do")
+	public String member_detail(ModelMap model, @RequestParam Integer member ,HttpSession session,HttpServletRequest request) {
+		System.out.println("개발자 상세");
+		Map<String, Object> detailmember = memberService.member_detail(member);
+		System.out.println(detailmember);
+		model.addAttribute("memberdetail", detailmember);
+		
+		return "/member/m_detail";
+	}
+	
 	
 	
 	@RequestMapping(value="/member/m_list.do")

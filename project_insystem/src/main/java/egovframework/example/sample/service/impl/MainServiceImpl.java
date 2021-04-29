@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package egovframework.example.sample.service.impl;
+import java.util.List;
 import java.util.Map;
 
 
@@ -48,6 +49,11 @@ public class MainServiceImpl implements MainService {
 	public void mainsignup(Map<String, Object> params) {
 		
 		mainMapper.mainsignup(params);
+	}
+	
+	@Override
+	public List<Map<String, Object>> memberoption(String code){
+		return mainMapper.memberoption(code);
 	}
 	
 }

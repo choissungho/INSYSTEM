@@ -15,6 +15,7 @@
  */
 package egovframework.example.sample.service;
 
+import java.util.List;
 import java.util.Map;
 
 
@@ -25,5 +26,7 @@ public interface MainService {
 	void mainsignup(Map<String, Object> params);
 	
 	int idcheck(Map<String, Object> params);
+	
+	List<Map<String, Object>> memberoption(String code);
 
 }
