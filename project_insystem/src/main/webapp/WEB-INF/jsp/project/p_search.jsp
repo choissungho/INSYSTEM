@@ -13,36 +13,57 @@
 </head>
 <body>
 	<%@ include file="../common/sidebar.jspf"%>
-	<!--@@@@@@@@@@@@@@@ 	콘텐츠부분 	@@@@@@@@@@@@@@@@@-->
-	<div class="container" style="margin-top: 5%;">
-		<h1>서칭중 프로젝트</h1>
+	<section>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-10 ml-auto pl-5 pr-5">
+				<div class="row pt-5 mt-3 mb-2 border-bottom">
+					<h3>서치중 프로젝트</h3>
+
+					<table class="table table-hover">
+						<colgroup>
+							<col width="5%" />
+							<col width="5%" />
+							<col width="5%" />
+							<col width="5%" />
+							<col width="5%" />
+							<col width="5%" />
+							<col width="5%" />
+							<col width="5%" />
+							<col width="5%" />
+							<col width="5%" />
+						</colgroup>
+
+
+						<thead class="thead-dark">
+							<tr>
+								<th>번호</th>
+								<th>프로젝트 이름</th>
+								<th>주관기관/주관사</th>
+								<th>프로젝트 지역</th>
+								<th>시작일시</th>
+								<th>종료일시</th>
+								<th>기타설명</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach items="${result}" var="list">
+								<tr  style="cursor: pointer" onclick="location.href='project/detail.do?param=${list.prjctNo}'">
+									<td>${list.prjctNo}</td>
+									<td>${list.prjctNm}</td>
+									<td>${list.prjctMnnst}/${list.prjctTruentpr}</td>
+									<td>${list.lcAtpt}</td>
+									<td>${list.prjctBgnde}</td>
+									<td>${list.prjctEndde}</td> 
+									<td>${list.prjctRm}</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
 	</div>
-
-	<table class="container table table-striped">
-		<thead>
-			<tr>
-				<th scope="col">번호</th>
-				<th scope="col">프로젝트명</th>
-				<th scope="col">주관기관/주관사</th>
-				<th scope="col">프로젝트 지역</th>
-				<th scope="col">시작일시</th>
-				<th scope="col">종료일시</th>
-				<th scope="col">기타설명</th>
-			</tr>
-		</thead>
-		<c:forEach items="${result}" var="list">
-			<tr>
-				<td>${list.prjctNo}</td>
-				<td>${list.prjctNm}</td>
-				<td>${list.prjctMnnst}/ ${list.prjctTruentpr}</td>
-				<td>${list.lcAtpt}</td>
-				<td>${list.prjctBgnde}</td>
-				<td>${list.prjctEndde}</td>
-				<td>${list.prjctRm}</td>
-			</tr>
-
-			</tbody>
-		</c:forEach>
-	</table>
+	</section>
 </body>
 </html>

@@ -20,7 +20,23 @@ import java.util.Map;
 
 public interface ProjectService {
 
+	public int projectRegist(Map<String, Object> param);
+	
 	public List<Map<String, Object>> projectSearch(Map<String, Object> param);
+
+	public List<Map<String, Object>> projectIng(Map<String, Object> param);
+
+	public List<Map<String, Object>> projectEnd(Map<String, Object> param);
+
+	public Map<String, Object> projectDetail(Map<String, Object> param);
+
+	public Map<String, Object> projectModifygo(Map<String, Object> param);
+	
+	public Map<String, Object> projectModfiy(Map<String, Object> param);
+
+
+
+
 
 
 }

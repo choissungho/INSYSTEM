@@ -27,14 +27,68 @@ import org.springframework.stereotype.Service;
 public class ProjectServiceImpl implements ProjectService {
 	
 	@Autowired
-
 	private ProjectMapper projectMapper;
+	@Override
+	public int projectRegist(Map<String, Object> params) {
+		
+		return projectMapper.projectRegist(params);
+	}
+	
+	
 
 	@Override
 	public List<Map<String, Object>> projectSearch(Map<String, Object> params) {
 		
 		return projectMapper.projectSearch(params);
 	}
+
+
+
+	@Override
+	public List<Map<String, Object>> projectIng(Map<String, Object> params) {
+		
+		return projectMapper.projectIng(params);
+	}
+
+
+
+	@Override
+	public List<Map<String, Object>> projectEnd(Map<String, Object> params) {
+
+		return projectMapper.projectEnd(params);
+
+	}
+
+
+
+	@Override
+	public Map<String, Object> projectDetail(Map<String, Object> params) {
+		
+		return projectMapper.projectDetail(params);
+	}
+
+
+	
+
+	@Override
+	public Map<String, Object> projectModfiy(Map<String, Object> params) {
+		
+		return projectMapper.projectModify(params);
+	}
+
+
+
+	@Override
+	public Map<String, Object> projectModifygo(Map<String, Object> params) {
+		
+		return projectMapper.projectModifygo(params);
+	}
+
+
+
+
+
+
 
 	
 }

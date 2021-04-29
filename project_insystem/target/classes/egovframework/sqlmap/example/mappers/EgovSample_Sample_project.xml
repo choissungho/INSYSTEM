@@ -4,18 +4,123 @@
 
 <mapper namespace="egovframework.example.sample.service.impl.ProjectMapper">
 
-	<select id="projectSearch" parameterType="java.util.Map" resultType="egovMap">
+
+	<insert id="projectRegist" parameterType="java.util.Map">
+		insert into
+		insystem.prjct_ll (PRJCT_NO,
+		PRJCT_NM,
+		PRJCT_BGNDE,
+		PRJCT_ENDDE,
+		PRJCT_MNNST,
+		PRJCT_TRUENTPR,
+		LC_ATPT,
+		LC_SIGNGU,
+		LC_EMD,
+		LC_ETC,
+		PRJCT_WCT,
+		PRJCT_QOTA,
+		HOPE_INPT_NMPR,
+		MMNY_INPT_NMPR,
+		COSA_PRUF_DEMAND,
+		CRQFC_PRUF_DEMAND,
+		PRJCT_END_YN,
+		PRJCT_RM,
+		FRST_REGISTER,
+		LAST_UPDUSR
+		)
+		values (nextval('seq_project'),
+		#{prjct_nm},
+		#{prjct_bgnde}::date,
+		#{prjct_endde}::date,
+		#{prjct_mnnst},
+		#{prjct_truentpr},
+		#{lc_atpt},
+		#{lc_signgu},
+		#{lc_emd},
+		#{lc_etc},
+		#{prjct_wct}::integer,
+		#{prjct_qota}::integer,
+		#{hope_inpt_nmpr}::integer,
+		#{mmny_inpt_nmpr}::integer,
+		#{cosa_pruf_demand},
+		#{crqfc_pruf_demand},
+		#{prjct_end_yn},
+		#{prjct_rm},
+		#{reg_admin},
+		#{reg_admin});
+	</insert>
+
+
+	<select id="projectSearch" parameterType="java.util.Map"
+		resultType="egovMap">
 		select
-			prjct_no,
-			prjct_nm,
-			prjct_mnnst,
-			prjct_truentpr,
-			lc_atpt,
-			prjct_bgnde,
-			prjct_endde,
-			prjct_rm
+		prjct_no,
+		prjct_nm,
+		prjct_mnnst,
+		prjct_truentpr,
+		lc_atpt,
+		prjct_bgnde,
+		prjct_endde,
+		prjct_rm
 		from insystem.PRJCT_LL
 	</select>
 
+	<select id="projectIng" parameterType="java.util.Map"
+		resultType="egovMap">
+		select
+		prjct_no,
+		prjct_nm,
+		prjct_mnnst,
+		prjct_truentpr,
+		lc_atpt,
+		prjct_bgnde,
+		prjct_endde,
+		prjct_rm
+		from insystem.PRJCT_LL
+		<![CDATA[
+		where PRJCT_BGNDE <= (NOW()) ]]>
+		<![CDATA[
+		and PRJCT_ENDDE > (NOW()); ]]>
+	</select>
+
+	<select id="projectEnd" parameterType="java.util.Map"
+		resultType="egovMap">
+		select
+		prjct_no,
+		prjct_nm,
+		prjct_mnnst,
+		prjct_truentpr,
+		lc_atpt,
+		prjct_bgnde,
+		prjct_endde,
+		prjct_rm
+		from insystem.PRJCT_LL
+		<![CDATA[
+		where PRJCT_BGNDE < (NOW()) ]]>
+		<![CDATA[
+		and PRJCT_ENDDE < (NOW()); ]]>
+	</select>
+
+	<select id="projectDetail" parameterType="String" resultType="egovMap">
+		select
+		*
+		from insystem.PRJCT_LL
+		where 1=1
+		and PRJCT_NO = #{param};
+	</select>
+
+	<select id="projectModifygo" parameterType="String" resultType="egovMap">
+		select
+		*
+		from insystem.PRJCT_LL
+		where 1=1
+		and PRJCT_NO = #{param};
+	</select>
+
+
+
 
 </mapper>
+
+
+
