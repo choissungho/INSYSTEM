@@ -25,5 +25,40 @@
 		select * from insystem.CMMN_CODE_SCLAS where MLSFC_CODE=#{code};
 	</select>
 	
-
+	<select id="admin_list" resultType="egovMap" parameterType="Integer">
+		select * from insystem.mngr_ll order by insystem.mngr_ll.mngr_no desc limit 10 offset #{index};
+	</select>
+	
+	<select id="admin_count" resultType="Integer">
+				select count(*) from insystem.mngr_ll;
+	</select>
+	
+	<select id="admin_detail" resultType="egovMap" parameterType="Integer">
+				select * from insystem.mngr_ll where mngr_no = #{member};
+	</select>
+	
+	<update id="admin_modify" parameterType="java.util.Map">
+				UPDATE insystem.dvlpr_ll SET 
+				
+				DVLPR_NM = #{dvlpr_nm},
+				DVLPR_SE = #{dvlpr_se},
+				TELNO1 = #{tel_no1},
+				TELNO2 = #{tel_no2},
+				TELNO3 = #{tel_no3},
+				RESDNC_ATPT = #{resdnc_atpt},
+				EMAIL = #{email},
+				GRAD = #{grad},
+				RGLLBR_YY = #{rgllbr_yy}::numeric,
+				RGLLBR_MT = #{rgllbr_mt}::numeric,
+				IRGLLBR_YY = #{lrgllbr_yy}::numeric,
+				IRGLLBR_MT = #{lrgllbr_mt}::numeric,
+				UNTPC = #{untpc}::numeric,
+				LAST_UPDUSR = #{reg_admin},
+				COSA_YN = #{cosa_yn},
+				RGLLBR_YN = #{rgllbr_yn},
+				last_updde = now()::timestamp without time zone
+				
+				
+				WHERE mngr_no = #{dvlpr_no}::Integer;
+	</update>
 </mapper>

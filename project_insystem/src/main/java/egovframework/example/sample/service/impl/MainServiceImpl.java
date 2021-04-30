@@ -56,4 +56,24 @@ public class MainServiceImpl implements MainService {
 		return mainMapper.memberoption(code);
 	}
 	
+	@Override
+	public Integer admin_count(int params){
+		return mainMapper.admin_count(params);
+	}
+	@Override
+	public List<Map<String, Object>> admin_list(int params) {
+		return mainMapper.admin_list(params);
+	}
+	
+	@Override
+	public Map<String, Object> admin_detail(int member) {
+		return mainMapper.admin_detail(member);
+	}
+	
+	@Override
+	public void admin_modify(Map<String, Object> params) {
+		
+		mainMapper.admin_modify(params);
+	}
+	
 }

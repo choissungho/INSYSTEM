@@ -28,5 +28,8 @@ public interface MemberService {
 	public List<Map<String, Object>> member_list(int params);
 
 	public Map<String, Object> member_detail(int member);
-
+	
+	void member_modify(Map<String, Object> params);
+	
+	void member_delete(int memeber);
 }

@@ -51,4 +51,15 @@ public class MemberServiceImpl implements MemberService {
 		return memberMapper.member_detail(member);
 	}
 	
+	@Override
+	public void member_modify(Map<String, Object> params) {
+		
+		memberMapper.member_modify(params);
+	}
+	
+	@Override
+	public void member_delete(int member){
+
+		memberMapper.member_delete(member);
+	}
 }

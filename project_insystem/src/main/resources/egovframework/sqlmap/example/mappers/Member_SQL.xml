@@ -11,9 +11,7 @@
 			
 			<!-- 개발자 리스트 페이징처리후 뿌려주는 쿼리 -->
 			<select id="member_list" resultType="egovMap" parameterType="Integer">
-				select * from insystem.dvlpr_ll order by insystem.dvlpr_ll.dvlpr_no desc limit 10 offset #{index};
-				
-<!-- 				select * from insystem.DVLPR_LL; -->
+				select * from insystem.dvlpr_ll where delete_yn ='N' order by insystem.dvlpr_ll.dvlpr_no desc limit 10 offset #{index};
 			</select>
 			
 			
@@ -21,6 +19,7 @@
 			<select id="member_detail" resultType="egovMap" parameterType="Integer">
 				select * from insystem.dvlpr_ll where dvlpr_no = #{member};
 			</select>
+			
 			
 			
 			<!-- 개발자 등록을 위한 삽입 쿼리 -->
@@ -34,6 +33,35 @@
 				);
 			</insert>
 			
+			<update id="member_modify" parameterType="java.util.Map">
+				UPDATE insystem.dvlpr_ll SET 
+				
+				DVLPR_NM = #{dvlpr_nm},
+				DVLPR_SE = #{dvlpr_se},
+				TELNO1 = #{tel_no1},
+				TELNO2 = #{tel_no2},
+				TELNO3 = #{tel_no3},
+				RESDNC_ATPT = #{resdnc_atpt},
+				EMAIL = #{email},
+				GRAD = #{grad},
+				RGLLBR_YY = #{rgllbr_yy}::numeric,
+				RGLLBR_MT = #{rgllbr_mt}::numeric,
+				IRGLLBR_YY = #{lrgllbr_yy}::numeric,
+				IRGLLBR_MT = #{lrgllbr_mt}::numeric,
+				UNTPC = #{untpc}::numeric,
+				LAST_UPDUSR = #{reg_admin},
+				COSA_YN = #{cosa_yn},
+				RGLLBR_YN = #{rgllbr_yn},
+				last_updde = now()::timestamp without time zone
+				
+				
+				WHERE dvlpr_no = #{dvlpr_no}::Integer;
+			</update>
 			
+			<update id="member_delete" parameterType="Integer">
+				UPDATE insystem.dvlpr_ll SET 
+				delete_yn= 'Y'
+				WHERE dvlpr_no = #{member}::Integer;
+			</update>
 
 </mapper>

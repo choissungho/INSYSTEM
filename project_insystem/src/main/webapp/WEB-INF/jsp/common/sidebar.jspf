@@ -71,7 +71,7 @@
 							</li>
 							
 							<li class="nav-item">
-								<a href="/project_insystem/admin.do" class="nav-link text-white p-3 mb-2 sidebar-link">
+								<a href="/project_insystem/admin.do?p=${1}" class="nav-link text-white p-3 mb-2 sidebar-link">
 									· 관리자
 								</a>
 							</li>

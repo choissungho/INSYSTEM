@@ -70,29 +70,29 @@ $(document).ready(function() {
 			<div class="row justify-content-center align-items-center">
 				<div class="col-lg-10 ml-auto pl-5 pr-5">
 					<div class="row pt-5 mt-3 mb-2 border-bottom">
-						<h3>개발자 등록</h3>
+						<h3>개발자 수정</h3>
 					</div>
 					
 					<div class="container">
 					
-			<form class="form-inline" method="post" action="/project_insystem/member/m_reg.do">
+			<form class="form-inline" method="post" action="/project_insystem/member/m_modify2.do">
 				<div class="col-sm-12 pt-3">
 					<div class="card">
 		                <div class="card-header card-header-primary">
 		                	<h4 class="card-title"><i class="fas fa-square"></i> 개발자 기본사항</h4>
 		                    
 		                </div>
-		                
+		                		<input value="${memberdetail.dvlprNo}" type="hidden" id="dvlpr_no" name="dvlpr_no" class="form-control" maxlength="4" autocomplete="off">
 							<table class="table">
 								<tbody>
 									<tr style="line-height:32px;">
 										<td>개발자 이름</td>
 										<td>
-											<input type="text" id="dvlpr_nm" name="dvlpr_nm" class="form-control" maxlength="4" autocomplete="off">
+											<input value="${memberdetail.dvlprNm}" type="text" id="dvlpr_nm" name="dvlpr_nm" class="form-control" maxlength="4" autocomplete="off">
 										</td>
 										<td>개발자 구분</td>
 		                                <td>
-		                                    <select class="form-control" id="dvlpr_se" name="dvlpr_se">
+		                                    <select value="${memberdetail.dvlprSe}" class="form-control" id="dvlpr_se" name="dvlpr_se">
 										      <option>개발자</option>
 										      <option>퍼블리셔</option>
 										      <option>디자이너</option>
@@ -105,30 +105,30 @@ $(document).ready(function() {
 									<tr style="line-height:32px;">
 										<td>연락처</td>
 										<td>
-											<select class="form-control" id="tel_no1" name="tel_no1">
+											<select value="${memberdetail.telno1}" class="form-control" id="tel_no1" name="tel_no1">
 										      <option>010</option>
 										      <option>011</option>
 										      <option>017</option>
 										    </select>
-										    <input type="text" class="form-control" style="width:70px;" maxlength="4" id="tel_no2" name="tel_no2" autocomplete="off">
-										    <input type="text" class="form-control" style="width:70px;" maxlength="4" id="tel_no3" name="tel_no3" autocomplete="off">
+										    <input value="${memberdetail.telno2}" type="text" class="form-control" style="width:70px;"  maxlength="4" id="tel_no2" name="tel_no2" autocomplete="off">
+										    <input value="${memberdetail.telno3}" type="text" class="form-control" style="width:70px;"  maxlength="4" id="tel_no3" name="tel_no3" autocomplete="off">
 										</td>
 							
 										<td>거주지</td>
 		                                <td>
-		                                    <input type="text" class="form-control" placeholder="ex) 경기-안양시" id="resdnc_atpt" name="resdnc_atpt" autocomplete="off">
+		                                    <input value="${memberdetail.resdncAtpt}" type="text" class="form-control" placeholder="ex) 경기-안양시" id="resdnc_atpt" name="resdnc_atpt" autocomplete="off">
 		                                </td>
 									</tr>
 									
 									<tr style="line-height:32px;">
 										<td>이메일</td>
 										<td>
-										    <input type="text" class="form-control" placeholder="ex) test@test.com" id="email" name="email" autocomplete="off">
+										    <input value="${memberdetail.email}" type="text" class="form-control" placeholder="ex) test@test.com" id="email" name="email" autocomplete="off">
 										</td>
 							
 										<td>등급</td>
 		                                <td>
-		                                    <select class="form-control" id="grad" name="grad">
+		                                    <select value="${memberdetail.grad}" class="form-control" id="grad" name="grad">
 										      <option>특급</option>
 										      <option>고급</option>
 										      <option>중급</option>
@@ -141,21 +141,21 @@ $(document).ready(function() {
 									<tr style="line-height:32px;">
 										<td>정규직 경력</td>
 										<td>
-										    <input type="text" class="form-control" style="width:70px;" placeholder="년" maxlength="2" id="rgllbr_yy" name="rgllbr_yy" autocomplete="off"/>
-										    <input type="text" class="form-control" style="width:70px;" placeholder="개월" maxlength="2" id="rgllbr_mt" name="rgllbr_mt" autocomplete="off"/>
+										    <input value="${memberdetail.rgllbrYy}" type="text" class="form-control" style="width:70px;" placeholder="년" maxlength="2" id="rgllbr_yy" name="rgllbr_yy" autocomplete="off"/>
+										    <input value="${memberdetail.rgllbrMt}" type="text" class="form-control" style="width:70px;" placeholder="개월" maxlength="2" id="rgllbr_mt" name="rgllbr_mt" autocomplete="off"/>
 										</td>
 							
 										<td>비정규직 경력</td>
 		                                <td>
-		                                    <input type="text" class="form-control" style="width:70px;" placeholder="년" maxlength="2" id="lrgllbr_yy" name="lrgllbr_yy" autocomplete="off"/>
-										    <input type="text" class="form-control" style="width:70px;" placeholder="개월" maxlength="2" id="lrgllbr_mt" name="lrgllbr_mt" autocomplete="off"/>
+		                                    <input value="${memberdetail.irgllbrYy}" type="text" class="form-control" style="width:70px;" placeholder="년" maxlength="2" id="lrgllbr_yy" name="lrgllbr_yy" autocomplete="off"/>
+										    <input value="${memberdetail.irgllbrMt}" type="text" class="form-control" style="width:70px;" placeholder="개월" maxlength="2" id="lrgllbr_mt" name="lrgllbr_mt" autocomplete="off"/>
 		                                </td>
 									</tr>
 									
 									<tr style="line-height:32px;">
 										<td>단가</td>
 										<td>
-										    <input type="text" class="form-control" placeholder="ex) 500" maxlength="4" id="untpc" name="untpc" autocomplete="off">
+										    <input value="${memberdetail.untpc}" type="text" class="form-control" placeholder="ex) 500" maxlength="4" id="untpc" name="untpc" autocomplete="off">
 										</td>
 							
 										<td>관리자</td>
@@ -168,14 +168,29 @@ $(document).ready(function() {
 										<td>코사 여부</td>
 										<td>
 											<label style="width:50px;">
-										    <input type="checkbox" class="form-control"  value="Y" id="cosa_yn" name="cosa_yn" autocomplete="off"/>해당
+											<c:choose>
+												<c:when test="${memberdetail.cosaYn eq 'Y'}">
+													<input value="${memberdetail.cosaYn}" type="checkbox" class="form-control"  id="cosa_yn" name="cosa_yn" checked/>해당
+												</c:when>
+												<c:otherwise>
+													<input value="N" type="checkbox" class="form-control" id="cosa_yn" name="cosa_yn" />해당
+												</c:otherwise>
+											</c:choose>
+										    
 											</label>
 										</td>
 							
 										<td>정규직 여부</td>
 										<td>
 											<label style="width:50px;">
-											<input type="checkbox" class="form-control"  value="Y" id="rgllbr_yn" name="rgllbr_yn" autocomplete="off"/>해당
+											<c:choose>
+												<c:when test="${memberdetail.rgllbrYn eq 'Y'}">
+													<input value="${memberdetail.rgllbrYn}" type="checkbox" class="form-control"  id="rgllbr_yn" name="rgllbr_yn" autocomplete="off" checked />해당
+												</c:when>
+												<c:otherwise>
+													<input value="N" type="checkbox" class="form-control" id="rgllbr_yn" name="rgllbr_yn" autocomplete="off"/>해당
+												</c:otherwise>
+											</c:choose>
 											</label>
 										</td>
 									</tr>
@@ -275,7 +290,7 @@ $(document).ready(function() {
 					 
 					 
 					 			<div class="text-center mt-2">
-							        <button type="submit" class="btn btn-primary">등록하기</button>
+							        <button type="submit" class="btn btn-primary">수정하기</button>
 							        <button type="button" class="btn btn-secondary" onclick="history.back()">취소하기</button>
 							    </div>
 						</div>

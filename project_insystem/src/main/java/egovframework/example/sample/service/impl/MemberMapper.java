@@ -15,6 +15,10 @@ public interface MemberMapper {
 	public List<Map<String, Object>> member_list(int params);
 	
 	public Map<String, Object> member_detail(int member);
+	
+	public void member_modify(Map<String, Object> params);
+	
+	public void member_delete(int member);
 
 }
  

@@ -28,5 +28,9 @@ public interface MainService {
 	int idcheck(Map<String, Object> params);
 	
 	List<Map<String, Object>> memberoption(String code);
-
+	
+	public List<Map<String, Object>> admin_list(int params);
+	public Integer admin_count(int params);
+	public Map<String, Object> admin_detail(int member);
+	void admin_modify(Map<String, Object> params);
 }

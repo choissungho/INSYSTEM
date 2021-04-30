@@ -19,17 +19,10 @@
 			<div class="row">
 				<div class="col-lg-10 ml-auto pl-5 pr-5">
 					<div class="row pt-5 mt-3 mb-2 border-bottom">
-						<h3>개발자 리스트</h3>
+						<h3>관리자 페이지</h3>
 								
 								<table class="table table-hover border-bottom">
 									<colgroup>
-										<col width="5%" />
-										<col width="5%" />
-										<col width="5%" />
-										<col width="5%" />
-										<col width="5%" />
-										<col width="5%" />
-										<col width="5%" />
 										<col width="5%" />
 										<col width="5%" />
 										<col width="5%" />
@@ -38,31 +31,18 @@
 								
 									<thead class="thead-dark">
 										<tr>
-											<th>이름</th>
-											<th>개발 구분</th>
-											<th>거주지</th>
-											<th>전화</th>
+											<th>관리자 이름</th>
+											<th>전화번호</th>
 											<th>이메일</th>
-											<th>코사</th>
-											<th>단가</th>
 										</tr>
 									</thead>
 									<tbody>
 										<c:forEach var="board" items="${listmember}">
 							<%-- 				<tr style="cursor: pointer" onclick="aaa(${board.btNo});"> --%>				
 											<tr style="cursor: pointer" onclick="location.href='./m_detail.do?member=${board.dvlprNo}'">
-													<td>${board.dvlprNm}</td>
-													<td>${board.dvlprSe} / ${board.grad}</td>
-													<td>${board.resdncAtpt}</td>
-													<td>${board.telno1}-${board.telno2}-${board.telno3}</td>
-													<td>${board.email}</td>
-													<td>
-														<c:choose>
-															<c:when test="${board.cosaYn eq 'Y'}">O</c:when>
-															<c:otherwise>X</c:otherwise>
-														</c:choose>
-													</td>
-													<td>${board.untpc}</td>
+													<td>${board.mngrNm}</td>
+													<td>${board.mngrTel1}-${board.mngrTel2}-${board.mngrTel3}</td>
+													<td>${board.mngrEmail}</td>
 											</tr>
 										</c:forEach>
 										
@@ -71,10 +51,6 @@
 											<c:forEach var="i" begin="${1}" end="${10 - fn:length(listmember)}">
 									    		<tr>
 									    			<td disabled>　　</td>
-													<td>　　</td>
-													<td>　　</td>
-													<td>　　</td>
-													<td>　　</td>
 													<td>　　</td>
 													<td>　　</td>
 									    		</tr>

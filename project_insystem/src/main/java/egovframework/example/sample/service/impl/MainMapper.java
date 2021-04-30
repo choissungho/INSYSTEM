@@ -15,5 +15,13 @@ public interface MainMapper {
 	public int idcheck(Map<String, Object> params);
 	
 	public List<Map<String, Object>> memberoption(String code);
+	
+	public Integer admin_count(int params);
+	
+	public List<Map<String, Object>> admin_list(int params);
+		
+	public Map<String, Object> admin_detail(int member);
+		
+	public void admin_modify(Map<String, Object> params);
 }
  

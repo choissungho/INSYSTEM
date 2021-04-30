@@ -40,13 +40,7 @@ public class MemberController {
 	@Resource(name = "memberservice")
 	private MemberService memberService;
 	
-//	@RequestMapping(value="/test.do")
-//	public String test(ModelMap model, @RequestParam Map<String, Object> params){
-//
-//		int result = memberService.test(params);
-//		System.out.println(result);
-//		return "member/m_reg";
-//	}
+
 	@RequestMapping(value="/member/m_reg.do")
 	public String member_reg(ModelMap model, @RequestParam Map<String, Object> params){
 		System.out.println("가입 컨트롤러");
@@ -57,17 +51,7 @@ public class MemberController {
 		
 		return "member/m_reg";
 	}
-	
-//	@RequestMapping(value="/member/m_list.do")
-//	public String member_list(ModelMap model, @RequestParam Map<String, Object> params){
-//		System.out.println("멤버리스트.두");
-//		
-//		List<Map<String, Object>> listmember = memberService.member_list(params);
-//		model.addAttribute("listmember", listmember);
-//		System.out.println(model.get("listmember"));
-//		
-//		return "member/m_list";
-//	}
+
 	
 	@RequestMapping(value="/member/m_detail.do")
 	public String member_detail(ModelMap model, @RequestParam Integer member ,HttpSession session,HttpServletRequest request) {
@@ -79,7 +63,49 @@ public class MemberController {
 		return "/member/m_detail";
 	}
 	
+	@RequestMapping(value="/member/m_modify.do")
+	public String member_modify(ModelMap model, @RequestParam Integer member ,HttpSession session,HttpServletRequest request) {
+		System.out.println("개발자 수정");
+		System.out.println(member);
+		Map<String, Object> detailmember = memberService.member_detail(member);
+		System.out.println(detailmember);
+		model.addAttribute("memberdetail", detailmember);
+//		memberService.member_modify(params);
+//		System.out.println(params.get("dvlprNo"));
+//		int member = Integer.parseInt(params.get("dvlprNo").toString());
+//		Map<String, Object> detailmember = memberService.member_detail(member);
+//		model.addAttribute("memberdetail", detailmember);
+		return "/member/m_modify";
+	}
 	
+	@RequestMapping(value="/member/m_modify2.do")
+	public String member_modify2(ModelMap model, @RequestParam Map<String, Object> params ,HttpSession session,HttpServletRequest request) {
+		System.out.println("개발자 수정버튼눌렀을때");
+		System.out.println(params);
+		System.out.println(params.get("cosa_yn"));
+		System.out.println(params.get("rgllbr_yn"));
+		if(params.get("cosa_yn")==null){
+			params.put("cosa_yn", "N");
+		}
+		if(params.get("rgllbr_yn")==null){
+			params.put("rgllbr_yn", "N");	
+		}
+		memberService.member_modify(params);
+		int member = Integer.parseInt(params.get("dvlpr_no").toString());
+		Map<String, Object> detailmember = memberService.member_detail(member);
+		model.addAttribute("memberdetail", detailmember);
+
+		
+		return "/member/m_detail";
+	}
+	
+	@RequestMapping(value="/member/m_delete.do")
+	public String member_delete(ModelMap model, @RequestParam Integer member ,HttpSession session,HttpServletRequest request) {
+		System.out.println("개발자 삭제");
+		System.out.println(member);
+		memberService.member_delete(member);
+		return "redirect:/member/m_list.do?p=1";
+	}
 	
 	@RequestMapping(value="/member/m_list.do")
 	public String member_board(ModelMap model, @RequestParam Integer p ,HttpSession session,HttpServletRequest request) {
@@ -126,3 +152,29 @@ public class MemberController {
 	}
 	
 }
+
+
+
+
+
+
+
+
+//@RequestMapping(value="/member/m_list.do")
+//public String member_list(ModelMap model, @RequestParam Map<String, Object> params){
+//	System.out.println("멤버리스트.두");
+//	
+//	List<Map<String, Object>> listmember = memberService.member_list(params);
+//	model.addAttribute("listmember", listmember);
+//	System.out.println(model.get("listmember"));
+//	
+//	return "member/m_list";
+//}
+
+//@RequestMapping(value="/test.do")
+//public String test(ModelMap model, @RequestParam Map<String, Object> params){
+//
+//	int result = memberService.test(params);
+//	System.out.println(result);
+//	return "member/m_reg";
+//}	

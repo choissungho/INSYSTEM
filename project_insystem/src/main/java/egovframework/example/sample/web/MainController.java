@@ -106,6 +106,11 @@ public class MainController {
 		return "redirect:/member/m_detail.do";
 	}
 	
+	@RequestMapping(value="/m_modify.do")
+	public String memberModify(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
+		System.out.println("개발자 상세 페이지");
+		return "redirect:/member/m_modify.do";
+	}
 	
 	//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@http://localhost:8080/project_insystem/project/search1.do
 	//				프로젝트 쪽
@@ -139,10 +144,47 @@ public class MainController {
 		System.out.println("메인 페이지");
 		return "sample/main";
 	}
+	
+	
 	@RequestMapping(value="/admin.do")
-	public String admin(ModelMap model, @RequestParam Map<String, Object> params, HttpSession session) {
+	public String admin(ModelMap model, @RequestParam Integer p, HttpSession session) {
 		System.out.println("관리자 페이지");
-		return "sample/admin";
+		System.out.println("파람값 "+p);
+		int start=0;int end=0;
+		if(p%10==0) {
+			start=(((p-1)/10)*10)+1;
+			end=start+9;
+		}
+		else{
+			start=((p/10)*10)+1;
+			end=start+9;
+		}
+		System.out.println("시작 "+start + "끝 "+end);
+	
+		//총 게시글 수 -> 페이징 갯수 카운트 하는 로직
+		int d_count = mainService.admin_count(p);
+		if(d_count%10==0)d_count=d_count/10;
+		else d_count=((d_count/10)+1);
+		session.setAttribute("f_end", d_count);
+		session.setAttribute("start", start);
+		session.setAttribute("end", end);
+		session.setAttribute("index", p);
+		System.out.println("마지막 인덱스값 "+ session.getAttribute("f_end"));
+	
+		//페이징 갯수 10개씩 나타내는 로직
+//		if(d_count%10==0)d_count=d_count/10;
+//		else d_count=((d_count/10)+1);
+//		System.out.println("페 카운트 "+d_count);
+
+		//해당 페이징 내에 게시글 10개씩 나타내는 로직
+		int index = (p-1)*10;
+		System.out.println("인덱스값 : "+index);
+		
+		List<Map<String, Object>> listmember = mainService.admin_list(index);
+		model.addAttribute("listmember", listmember);
+		System.out.println(model.get("listmember"));
+		
+		return "admin/admin";
 	}
 	
 }
